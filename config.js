@@ -118,9 +118,9 @@ var config = {
 
   // 版块
   tabs: [
-    ['job', '活动'],
+    ['activity', '活动'],
     ['share', '分享'],
-    ['ask', '问答'],
+    ['answer', '问答'],
   ],
 
   // 极光推送
