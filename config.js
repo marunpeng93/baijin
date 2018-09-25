@@ -6,7 +6,7 @@ var path = require('path');
 
 var config = {
   // debug 为 true 时，用于本地调试
-  debug: true,
+  debug: false,
 
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
 
@@ -28,7 +28,7 @@ var config = {
   // cdn host，如 http://cnodejs.qiniudn.com
   site_static_host: '', // 静态文件存储域名
   // 社区的域名
-  host: 'localhost',
+  host: 'www.baijin10.com',
   // 默认的Google tracker ID，自有站点请修改，申请地址：http://www.google.com/analytics/
   google_tracker_id: '',
   // 默认的cnzz tracker ID，自有站点请修改
@@ -66,13 +66,13 @@ var config = {
 
   // 邮箱配置
   mail_opts: {
-    host: 'smtp.qq.com',
-    port: 465,
+    host: 'smtp.ym.163.com',
+    port: 994,
+    secure: true,
     auth: {
-      user: '1643646033@qq.com',
-      pass: 'otjindlteubaejgh'
-    },
-    ignoreTLS: true,
+      user: 'hello@baijin10.com',
+      pass: 'hello2018haha'
+    }
   },
 
   //weibo app key

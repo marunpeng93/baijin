@@ -4,7 +4,7 @@ var config        = require('../config');
 var util          = require('util');
 var logger = require('./logger');
 var transporter     = mailer.createTransport(config.mail_opts);
-var SITE_ROOT_URL = 'https://' + config.host;
+var SITE_ROOT_URL = 'http://' + config.host;
 var async = require('async')
 
 /**
@@ -29,7 +29,6 @@ exports.sendMail = sendMail;
  * @param {String} name 接收人的用户名
  */
 exports.sendActiveMail = function (who, token, name) {
-  console.log(SITE_ROOT_URL + '/active_account?key=' + token + '&name=' + name);
   var from    = util.format('%s <%s>', config.name, config.mail_opts.auth.user);
   var to      = who;
   var subject = config.name + '社区帐号激活';
