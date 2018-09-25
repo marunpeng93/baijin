@@ -1,0 +1,70 @@
+<div id='content'>
+  <div class='panel'>
+    <div class='header'>
+      <ul class='breadcrumb'>
+        <li><a href='/'>主页</a><span class='divider'>/</span></li>
+        <li class='active'>加入志愿者</li>
+      </ul>
+    </div>
+    <div class='inner'>
+      <% if (typeof(error) !== 'undefined' && error) { %>
+      <div class="alert alert-error">
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        <strong><%= error %></strong>
+      </div>
+      <% } %>
+      <% if (typeof(success) !== 'undefined' && success) { %>
+      <div class="alert alert-success">
+        <strong><%= success %></strong>
+      </div>
+      <% } else { %>
+      <form id='signup_form' class='form-horizontal' action='/join/volunteer' method='post'>
+        <div class='control-group'>
+          <label class='control-label' for='name'>姓名：</label>
+
+          <div class='controls'>
+            <input class='input-xlarge' id='name' name='name' size='30' type='text' value=''/>
+          </div>
+        </div>
+        <div class='control-group'>
+          <label class='control-label' for='gender'>性别：</label>
+
+          <div class='controls'>
+              <label class="single"><input type="radio" name="gender" value="男" />男</label>
+              <label class="single"><input type="radio" name="gender" value="女" />女</label>
+          </div>
+        </div>
+        <div class='control-group'>
+          <label class='control-label' for='phone'>手机号：</label>
+
+          <div class='controls'>
+            <input class='input-xlarge' id='phone' name='phone' size='30' type='tel'/>
+          </div>
+        </div>
+        <div class='control-group'>
+          <label class='control-label' for='email'>地区：</label>
+
+          <div class='controls'>
+              <select class="select" name="province" id="s1">
+                  <option></option>
+              </select>
+              <select class="select" name="city" id="s2">
+                  <option></option>
+              </select>
+              <select class="select" name="town" id="s3">
+                  <option></option>
+              </select>
+          </div>
+        </div>
+        <input id="address" name="address" type="hidden" value="" />
+        <div class='form-actions'>
+          <input type='submit' class='span-primary' value='申请加入'/>
+        </div>
+      </form>
+      <% } %>
+    </div>
+  </div>
+</div>
+<script>
+setup()
+</script>
