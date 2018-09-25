@@ -120,16 +120,16 @@ passport.use(new GitHubStrategy(config.GITHUB_OAUTH, githubStrategyMiddleware));
 app.use(auth.authUser);
 app.use(auth.blockUser());
 
-if (!config.debug) {
-  app.use(function (req, res, next) {
-    if (req.path === '/api' || req.path.indexOf('/api') === -1) {
-      csurf()(req, res, next);
-      return;
-    }
-    next();
-  });
-  app.set('view cache', true);
-}
+// if (!config.debug) {
+//   app.use(function (req, res, next) {
+//     if (req.path === '/api' || req.path.indexOf('/api') === -1) {
+//       csurf()(req, res, next);
+//       return;
+//     }
+//     next();
+//   });
+//   app.set('view cache', true);
+// }
 
 // for debug
 // app.get('/err', function (req, res, next) {

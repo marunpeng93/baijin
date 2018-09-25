@@ -23,6 +23,10 @@ exports.join = async function (req, res, next) {
         res.status(422);
         res.render('join/volunteer', {error: msg});
     });
+  if(!login){
+    ep.emit('prop_err', '请先登录');
+    return;
+  }
 
   // 验证信息的正确性
   if ([name, gender, phone].some(function (item) { return item === ''; })) {

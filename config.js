@@ -136,8 +136,4 @@ var config = {
   visit_per_day: 1000, // 每个 ip 每天能访问的次数
 };
 
-if (process.env.NODE_ENV === 'test') {
-  config.db = 'mongodb://127.0.0.1/node_club_test';
-}
-
 module.exports = config;
