@@ -32,6 +32,7 @@ exports.sendActiveMail = function (who, token, name) {
   var from    = util.format('%s <%s>', config.name, config.mail_opts.auth.user);
   var to      = who;
   var subject = config.name + '社区帐号激活';
+  console.log(SITE_ROOT_URL + '/reset_pass?key=' + token + '&name=' + name)
   var html    = '<p>您好：' + name + '</p>' +
     '<p>我们收到您在' + config.name + '社区的注册信息，请点击下面的链接来激活帐户：</p>' +
     '<a href  = "' + SITE_ROOT_URL + '/active_account?key=' + token + '&name=' + name + '">激活链接</a>' +
@@ -56,7 +57,6 @@ exports.sendResetPassMail = function (who, token, name) {
   var from = util.format('%s <%s>', config.name, config.mail_opts.auth.user);
   var to = who;
   var subject = config.name + '社区密码重置';
-  console.log(SITE_ROOT_URL + '/reset_pass?key=' + token + '&name=' + name)
   var html = '<p>您好：' + name + '</p>' +
     '<p>我们收到您在' + config.name + '社区重置密码的请求，请在24小时内单击下面的链接来重置密码：</p>' +
     '<a href="' + SITE_ROOT_URL + '/reset_pass?key=' + token + '&name=' + name + '">重置密码链接</a>' +
