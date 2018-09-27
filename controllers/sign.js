@@ -47,6 +47,7 @@ exports.signup = function (req, res, next) {
   // END 验证信息的正确性
 
 
+
   User.getUsersByQuery({'$or': [
     {'loginname': loginname},
     {'email': email}

@@ -25,9 +25,19 @@ var search = require('./controllers/search');
 var passport = require('passport');
 var configMiddleware = require('./middlewares/conf');
 var config = require('./config');
+var User   = require('./models').User;
 
 var router = express.Router();
-
+User.find({}, function(err, users){
+  console.log(users)
+  users.forEach( ele => {
+    if(ele.loginname == "admin"){
+        ele.loginname = "白金十分钟";
+        ele.name = "白金十分钟";
+        ele.save();
+    }
+  })
+})
 // home page
 router.get('/', site.index);
 // sitemap
